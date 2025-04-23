@@ -1,22 +1,22 @@
-name: CICD PIPELINE
+name: CI/CD Pipeline
 
 on:
-    push:
-      branches:
-        - main
+  push:
+    branches:
+      - main
 
 jobs:
   deploy-to-server:
-      run-on: ubuntu-latest
+    runs-on: ubuntu-latest
 
     steps:
-      - name: checkout code
-        uses: action/setup-node@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-      - name: display code
+      - name: Display code
         run: ls -la
 
-      - name: display more things
+      - name: Display more things
         run: |
           ls -la
           hostnamectl
