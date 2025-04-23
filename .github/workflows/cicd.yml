@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  deploy-to-server:
+  deploy-to-server-01:
     runs-on: ubuntu-latest
 
     steps:
@@ -20,4 +20,31 @@ jobs:
         run: |
           ls -la
           hostnamectl
+
+
+
+          name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy-to-server-02:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Display code
+        run: ls -la
+
+      - name: Display more things
+        run: |
+          ls -la
+          hostnamectl
+
+
 
