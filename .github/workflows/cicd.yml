@@ -1,0 +1,23 @@
+name: CICD PIPELINE
+
+on:
+    push:
+      branches:
+        - main
+
+jobs:
+  deploy-to-server:
+      run-on: ubuntu-latest
+
+    steps:
+      - name: checkout code
+        uses: action/setup-node@v3
+
+      - name: display code
+        run: ls -la
+
+      - name: display more things
+        run: |
+          ls -la
+          hostnamectl
+
